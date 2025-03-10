@@ -47,7 +47,8 @@ The following articles provide instructions on how to configure the JAR file for
     ```
     Global security (Java Authentication and Authorization Service)> JAAS - Application logins > New 
     ```
-
+ <img src="https://github.com/una-tapa/LibertyDemoHashtableLogin/blob/main/JAAS-Application-Login.png)" alt="SampleScreenShot" width="500" >
+ 
 - Use login module proxy
 
   Specifies that the Java Authentication and Authorization Service (JAAS) loads the login module proxy class. JAAS then delegates calls to the login module classes that are defined in the Module class name field. Use this option when you use both Version 6.x and Version 8.x and 9.x Application Servers in the same environment.
