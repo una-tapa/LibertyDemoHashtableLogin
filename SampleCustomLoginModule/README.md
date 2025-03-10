@@ -41,6 +41,7 @@ The following configuration should load the SampleCustomLoginModule class when s
   <options debug="true"/>
 </jaasLoginModule>
 ```
+## Sample code for login from Application 
 
 The following sample code is for the applicaton to perform Jaas loginModule to assert a user 
 
