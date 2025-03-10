@@ -27,6 +27,34 @@ The following articles provide instructions on how to configure the JAR file for
 - [WebSphere Liberty or OpenLiberty](https://www.ibm.com/docs/en/was-liberty/base?topic=liberty-configuring-jaas-custom-login-module)
 - [WebSphere Application Server traditional](https://www.ibm.com/docs/en/was/8.5.5?topic=SSEQTP_8.5.5/com.ibm.websphere.nd.multiplatform.doc/ae/tsec_jaascustlogmod.htm) 
 
+### Traditonal WebSphere 
+- Compile the sample login module 
+- Place the login module under lib\ext
+    ```
+    C:\WAS90ND\lib\ext>dir
+    Volume in drive C is Windows
+     Volume Serial Number is 90DE-E494
+
+    Directory of C:\WAS90ND\lib\ext
+
+    08/03/2023  02:14 PM    <DIR>          .
+    04/25/2023  12:53 PM    <DIR>          ..
+    08/03/2023  02:59 PM             3,902 samplelm-1.0-SNAPSHOT.jar
+                   1 File(s)          3,902 bytes
+                   2 Dir(s)  79,673,016,320 bytes free
+    ```
+- Configure the loginModule from the AdminConsole
+    ```
+    Global security (Java Authentication and Authorization Service)> JAAS - Application logins > New 
+    ```
+
+- Use login module proxy
+
+  Specifies that the Java Authentication and Authorization Service (JAAS) loads the login module proxy class. JAAS then delegates calls to the login module classes that are defined in the Module class name field. Use this option when you use both Version 6.x and Version 8.x and 9.x Application Servers in the same environment.
+- Start the server
+
+
+<!--
 ## Liberty configuration snippet 
 
 The following configuration should load the SampleCustomLoginModule class when samplelm-1.0-SNAPSHOT.jar is placed in the same directory as server.xml. 
@@ -41,6 +69,8 @@ The following configuration should load the SampleCustomLoginModule class when s
   <options debug="true"/>
 </jaasLoginModule>
 ```
+--> 
+
 ## Sample code for login from Application 
 
 The following sample code is for the applicaton to perform Jaas loginModule to assert a user 
