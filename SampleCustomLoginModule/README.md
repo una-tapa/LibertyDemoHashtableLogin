@@ -47,7 +47,7 @@ The following articles provide instructions on how to configure the JAR file for
     ```
     Global security (Java Authentication and Authorization Service)> JAAS - Application logins > New 
     ```
- <img src="https://github.com/una-tapa/LibertyDemoHashtableLogin/blob/main/JAAS-Application-Login.png)" alt="SampleScreenShot" width="500" >
+ <img src="https://github.com/una-tapa/LibertyDemoHashtableLogin/blob/main/JAAS-Application-Login.png" alt="SampleScreenShot" width="500" >
  
 - Use login module proxy
 
