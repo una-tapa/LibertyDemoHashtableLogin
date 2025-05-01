@@ -27,7 +27,23 @@ The following articles provide instructions on how to configure the JAR file for
 - [WebSphere Liberty or OpenLiberty](https://www.ibm.com/docs/en/was-liberty/base?topic=liberty-configuring-jaas-custom-login-module)
 - [WebSphere Application Server traditional](https://www.ibm.com/docs/en/was/8.5.5?topic=SSEQTP_8.5.5/com.ibm.websphere.nd.multiplatform.doc/ae/tsec_jaascustlogmod.htm) 
 
-### Traditonal WebSphere 
+
+## Liberty configuration snippet 
+
+The following configuration should load the SampleCustomLoginModule class when samplelm-1.0-SNAPSHOT.jar is placed in the same directory as server.xml. 
+```
+<library id="customLoginLib"> 
+    <fileset dir="${server.config.dir}" includes="samplelm-1.0-SNAPSHOT.jar"/> 
+</library> 
+
+<jaasLoginModule id="myCustom" 
+                 className="com.ibm.ws.samples.lm.SampleCustomLoginModule" 
+                 controlFlag="REQUIRED" libraryRef="customLoginLib">
+  <options debug="true"/>
+</jaasLoginModule>
+```
+
+### Traditonal WebSphere configuration
 - Compile the sample login module 
 - Place the login module under lib\ext
     ```
@@ -57,22 +73,7 @@ The following articles provide instructions on how to configure the JAR file for
 - Start the server
 
 
-<!--
-## Liberty configuration snippet 
 
-The following configuration should load the SampleCustomLoginModule class when samplelm-1.0-SNAPSHOT.jar is placed in the same directory as server.xml. 
-```
-<library id="customLoginLib"> 
-    <fileset dir="${server.config.dir}" includes="samplelm-1.0-SNAPSHOT.jar"/> 
-</library> 
-
-<jaasLoginModule id="myCustom" 
-                 className="com.ibm.ws.samples.lm.SampleCustomLoginModule" 
-                 controlFlag="REQUIRED" libraryRef="customLoginLib">
-  <options debug="true"/>
-</jaasLoginModule>
-```
---> 
 
 ## Sample code for login from Application 
 
